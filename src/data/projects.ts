@@ -175,8 +175,9 @@ export const projectsData: Project[] = [
       'HR 데이터는 다양한 시스템에 분산되어 있고 구조가 복잡해 일반 사용자가 필요한 정보를 찾기 어려웠습니다. 기존 방식은 SQL이나 복잡한 필터를 사용해야 했기 때문에 접근성이 낮았습니다.',
     solution:
       '자연어 기반 Copilot 인터페이스를 통해 사용자가 질문 형태로 HR 데이터를 탐색할 수 있도록 설계했습니다. 자동완성 기능과 채팅 UI를 결합해 질문 작성 과정을 단순화하고, 메시지 기반 인터페이스로 결과를 직관적으로 확인할 수 있도록 구현했습니다.',
-    role: '프론트엔드 개발 (100%)',
+    role: '프론트엔드 개발 팀장 (팀 프로젝트)',
     contributions: [
+      '프론트엔드 100% 구현',
       'React 기반 Copilot 채팅 인터페이스 설계 및 구현',
       '질문 입력을 돕는 자동완성 기능 개발',
       '채팅 메시지 흐름 및 상태 관리 구조 설계',
@@ -233,7 +234,7 @@ export const projectsData: Project[] = [
       '객체 지향 프로그래밍은 개념이 추상적이어서 처음 배우는 학습자가 어렵게 느끼기 쉽고, 단순 이론 설명만으로는 실제 이해로 이어지기 어려운 문제가 있었습니다.',
     solution:
       'Blockly 기반의 블록 코딩 인터페이스를 도입해 객체 지향 개념을 시각적으로 학습할 수 있도록 만들었습니다. 이론 페이지, 문제 풀이, 퀴즈를 하나의 학습 흐름으로 연결하고, 단계별 힌트와 정답 확인 기능을 통해 개념 이해와 반복 학습이 가능하도록 설계했습니다.',
-    role: 'Frontend Developer',
+    role: '프론트엔드 개발 (팀 프로젝트)',
     contributions: [
       '문제 페이지 및 Blockly 워크스페이스 구현',
       '퀴즈 페이지 UI 및 풀이 흐름 구현',
@@ -279,6 +280,9 @@ export const projectsData: Project[] = [
     gallery: ['/images/codekids-1.png', '/images/codekids-2.png'],
     links: {
       github: 'https://github.com/CSID-DGU/2024-1-OSS-team-5-OOP',
+      figma:
+        'https://www.figma.com/design/WY3utWkVzDiC9EkUISWOdd/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EA%B5%90%EC%9C%A1%EC%9A%A9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D?node-id=173-2&p=f&t=qvlQRtEU8nZrmvXc-0',
+      demo: 'https://2024-1-oss-team-5-oop.vercel.app/tutorial',
     },
     timeline: '2024.03 - 2024.06',
   },
@@ -293,7 +297,7 @@ export const projectsData: Project[] = [
       '기존 육성형 콘텐츠는 상호작용이 단조롭고, 사용자의 플레이 결과가 캐릭터 성장에 유기적으로 연결되지 않는 경우가 많았습니다. 또한 팀 프로젝트 특성상 각자 게임을 나누어 개발하다 보면 화면 흐름과 사용자 경험이 분절될 수 있다는 문제도 있었습니다.',
     solution:
       '미니게임 결과가 즉시 경험치와 레벨에 반영되는 구조를 설계하고, 메인 → 플레이 → 결과로 이어지는 사용자 흐름을 분리해 서비스처럼 동작하도록 구현했습니다. 특히 Running Man에서는 점프 상태 관리, 충돌 판정, 렌더링 최적화를 직접 설계했고, localStorage와 custom hook을 활용해 세션이 종료되어도 성장 데이터가 유지되도록 만들었습니다.',
-    role: 'Team Leader & Frontend Developer',
+    role: '프론트엔드 개발 팀장 (팀 프로젝트)',
     contributions: [
       'Figma 기반 전체 UI 설계',
       'Running Man 미니게임 개발',
@@ -302,6 +306,7 @@ export const projectsData: Project[] = [
       'useRef와 forwardRef를 활용한 충돌 판정 구현',
       'React.memo와 useCallback 기반 렌더링 최적화 적용',
       'localStorage 및 useCharacter 커스텀 훅 설계',
+      '게임 인트로 UI 구현 및 Help Modal 구현',
     ],
     learnings: [
       '게임형 인터페이스를 서비스 흐름으로 설계하는 방법',
@@ -345,11 +350,70 @@ export const projectsData: Project[] = [
     category: 'web-application',
     featured: false,
     image: '/images/devgochi.png',
+    gallery: ['/images/devgochi-1.png', '/images/devgochi-2.png'],
     links: {
       github: 'https://github.com/haeni82/Devgochi',
       demo: 'https://devgochi.vercel.app/',
-      videoLink: '/videos/devgochi-demo.mp4', // 로컬 동영상 파일 예시 (실제 파일은 용량 문제로 제외)
+      figma:
+        'https://www.figma.com/design/tLF3T01T8GtUgsAzCT0Yap/DEV-GOTCHI?node-id=46-41&t=9NEaW5poUwymlarN-0',
+      videoLink: 'https://youtu.be/4M1HJATS2FQ?si=dPp7dbeySoob740L', // 로컬 동영상 파일 예시 (실제 파일은 용량 문제로 제외)
     },
-    timeline: '3 weeks',
+    timeline: '2 weeks',
+  },
+  {
+    id: 'era-map',
+    title: 'ERA',
+    summary: '교통 약자를 위한 편의시설 기반 길찾기 지도 서비스',
+    description:
+      'ERA는 교통 약자를 위한 전용 지도 서비스로, 지하철 역사 내 엘리베이터 경로와 저상버스 기반 길찾기를 제공하는 애플리케이션입니다. 지도 위에 장애인 편의시설과 즐겨찾기 장소를 마커로 표시하고, 사용자가 직접 편의시설 등록을 요청할 수 있는 기능을 통해 접근성 정보를 확장할 수 있도록 설계했습니다.',
+    problem:
+      '일반 지도 서비스에서는 교통 약자를 위한 접근성 정보가 부족해 휠체어 이용자나 이동이 불편한 사용자가 실제 이동 가능한 경로를 찾기 어렵다는 문제가 있었습니다.',
+    solution:
+      'T Map API 기반 지도 서비스를 구현하고, 엘리베이터 이동 경로와 저상버스 정보를 반영한 길찾기 기능을 제공했습니다. 또한 장애인 편의시설과 즐겨찾기 장소를 마커로 표시하고, 편의시설 등록 요청 기능을 통해 사용자 참여형 접근성 정보를 구축했습니다.',
+    role: '프론트엔드 개발 (팀 프로젝트)',
+    contributions: [
+      'T Map API 기반 지도 및 마커 기능 구현',
+      '장소 검색 시 편의시설 및 즐겨찾기 신청 UI 구현',
+      '길찾기 결과 화면 및 상세 경로 뷰 구현',
+    ],
+    learnings: [
+      '지도 API를 활용한 위치 기반 서비스 구현',
+      '마커와 사용자 데이터 기반 지도 UI 설계',
+      '접근성 중심 서비스 기능 설계 경험',
+    ],
+    technologies: [
+      {
+        name: 'React',
+        category: 'frontend',
+        proficiency: 'strong',
+        icon: 'react',
+      },
+      {
+        name: 'JavaScript',
+        category: 'frontend',
+        proficiency: 'comfortable',
+        icon: 'javascript',
+      },
+      {
+        name: 'T Map API',
+        category: 'tools',
+        proficiency: 'comfortable',
+        icon: 'api',
+      },
+      {
+        name: 'CSS',
+        category: 'styling',
+        proficiency: 'strong',
+        icon: 'css',
+      },
+    ],
+    category: 'web-application',
+    featured: false,
+    image: '/images/era.png',
+    gallery: ['/images/era-1.png', '/images/era-2.png', '/images/era-4.png'],
+    links: {
+      github: 'https://github.com/Dongguk-founder',
+    },
+    timeline: '2023.11 ~ 2023.12',
   },
 ];

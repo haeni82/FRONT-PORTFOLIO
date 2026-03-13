@@ -66,7 +66,9 @@ export type TechCategory =
   | 'animation'
   | 'tools'
   | 'collaboration'
-  | 'design';
+  | 'design'
+  | 'state'
+  | 'deployment';
 
 export interface TechStackData {
   categories: {

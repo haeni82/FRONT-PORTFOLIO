@@ -23,8 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large video files
-public/videos/*.mp4
-public/videos/*.mov
-public/videos/*.avi
-public/videos/*.mkv
+# Large video files (commented out to allow video uploads)
+# public/videos/*.mp4
+# public/videos/*.mov
+# public/videos/*.avi
+# public/videos/*.mkv

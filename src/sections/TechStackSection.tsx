@@ -7,7 +7,7 @@ import { Section } from '../components/layout';
 
 interface TechItem {
   name: string;
-  icon: string;
+  icon: string; // 이제 이미지 경로를 저장
 }
 
 interface TechGroupProps {
@@ -74,7 +74,15 @@ const TechPill: React.FC<{
         text-sm font-medium
       `}
     >
-      <span className="text-base leading-none">{tech.icon}</span>
+      {tech.icon.startsWith('/icons/') ? (
+        <img
+          src={tech.icon}
+          alt={tech.name}
+          className="h-4 w-4 object-contain"
+        />
+      ) : (
+        <span className="text-base leading-none">{tech.icon}</span>
+      )}
       <span>{tech.name}</span>
     </motion.div>
   );
@@ -132,35 +140,35 @@ const TechGroup: React.FC<TechGroupProps> = ({
 
 const TechStackSection: React.FC = () => {
   const frontend: TechItem[] = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'JavaScript', icon: '💛' },
-    { name: 'HTML5', icon: '🌐' },
-    { name: 'CSS3', icon: '🎨' },
-    { name: 'Vite', icon: '⚡' },
+    { name: 'React', icon: '/icons/react.png' },
+    { name: 'Next.js', icon: '/icons/next.png' },
+    { name: 'TypeScript', icon: '/icons/ts.png' },
+    { name: 'JavaScript', icon: '/icons/js.png' },
+    { name: 'HTML5', icon: '/icons/html.png' },
+    { name: 'CSS3', icon: '/icons/css.png' },
+    { name: 'Vite', icon: '/icons/vite.png' },
   ];
 
   const stylingMotionState: TechItem[] = [
-    { name: 'Tailwind CSS', icon: '🫧' },
-    { name: 'styled-components', icon: '💅' },
-    { name: 'Framer Motion', icon: '🎬' },
-    { name: 'Three.js', icon: '🪐' },
-    { name: 'Zustand', icon: '🐻' },
-    { name: 'TanStack Query', icon: '🔍' },
-    { name: 'shadcn/ui', icon: '🧩' },
-    { name: 'vanilla-extract', icon: '🍦' },
+    { name: 'Tailwind CSS', icon: '/icons/tailwind.png' },
+    { name: 'styled-components', icon: '/icons/styledcomponents.png' },
+    { name: 'Framer Motion', icon: '/icons/framermotion.png' },
+    { name: 'Three.js', icon: '/icons/three.png' },
+    { name: 'Zustand', icon: '/icons/zustand.png' },
+    { name: 'TanStack Query', icon: '/icons/tanstack.png' },
+    { name: 'shadcn/ui', icon: '/icons/shadcn.png' },
+    { name: 'vanilla-extract', icon: '/icons/vanilla.png' },
   ];
 
   const toolsCollabDeploy: TechItem[] = [
-    { name: 'GitHub', icon: '🐙' },
-    { name: 'Figma', icon: '🎀' },
-    { name: 'Notion', icon: '📝' },
-    { name: 'Jira', icon: '📌' },
-    { name: 'Vercel', icon: '▲' },
-    { name: 'lefthook', icon: '🪝' },
-    { name: 'CodeRabbit', icon: '🐇' },
-    { name: 'slack', icon: '🐇' },
+    { name: 'GitHub', icon: '/icons/github.png' },
+    { name: 'Figma', icon: '/icons/figma.png' },
+    { name: 'Notion', icon: '/icons/notion.png' },
+    { name: 'Jira', icon: '/icons/jira.png' },
+    { name: 'Vercel', icon: '/icons/vercel.png' },
+    { name: 'lefthook', icon: '/icons/lefthook.png' },
+    { name: 'CodeRabbit', icon: '/icons/coderabbit.png' },
+    { name: 'Slack', icon: '/icons/slcak.png' },
   ];
 
   const alsoWorkedWith: TechItem[] = [

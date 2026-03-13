@@ -44,8 +44,9 @@ const ExperienceSection: React.FC = () => {
               color="muted"
               className="max-w-2xl mx-auto font-ongle"
             >
-              A timeline of my growth as a frontend developer, from first lines
-              of code to building impactful user experiences.
+              프론트엔드 개발자로 성장해온 여정을 담은 타임라인입니다. 처음
+              코드를 작성하던 순간부터 의미 있는 사용자 경험을 만드는 지금까지의
+              과정입니다.
             </Text>
           </div>
         </MotionWrapper>
