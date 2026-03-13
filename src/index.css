@@ -1,0 +1,316 @@
+@import 'tailwindcss';
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Custom CSS variables for theme */
+:root {
+  --motion-reduce: 0;
+  --sun-glow: rgba(245, 158, 11, 0.3);
+  --peach-glow: rgba(255, 90, 31, 0.2);
+  --cream-bg: #fefdf8;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-reduce: 1;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--cream-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.keyboard-navigation *:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #78350f;
+}
+
+/* Component layer utilities */
+@layer components {
+  /* Text gradient utilities */
+  .text-gradient-sun {
+    background: linear-gradient(135deg, #f59e0b, #ff8a4c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-peach {
+    background: linear-gradient(135deg, #ff8a4c, #ff5a1f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #f59e0b, #ff5a1f, #e76f51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background gradient utilities */
+  .bg-gradient-sun {
+    background: linear-gradient(135deg, #fef3c7, #fde68a, #fcd34d);
+  }
+
+  .bg-gradient-peach {
+    background: linear-gradient(135deg, #fef7f0, #feecdc, #fcd9bd);
+  }
+
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, #fef3c7, #feecdc, #fef7f0);
+  }
+
+  .bg-gradient-sunset {
+    background: linear-gradient(135deg, #fef3c7, #fde68a, #ff8a4c, #ff5a1f);
+  }
+
+  /* Glass morphism effects */
+  .glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Shadow utilities */
+  .bloom-shadow {
+    box-shadow: 0 0 30px var(--sun-glow);
+  }
+
+  .bloom-shadow-strong {
+    box-shadow: 0 0 50px rgba(245, 158, 11, 0.4);
+  }
+
+  .peach-shadow {
+    box-shadow: 0 0 25px var(--peach-glow);
+  }
+
+  /* Animation utilities */
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .glow-animation {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .bloom-animation {
+    animation: bloom 1s ease-out;
+  }
+
+  /* Interactive states */
+  .interactive-scale {
+    transition: transform 0.2s ease-out;
+  }
+
+  .interactive-scale:hover {
+    transform: scale(1.02);
+  }
+
+  .interactive-lift {
+    transition:
+      transform 0.2s ease-out,
+      box-shadow 0.2s ease-out;
+  }
+
+  .interactive-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .interactive-glow {
+    transition: box-shadow 0.3s ease-out;
+  }
+
+  .interactive-glow:hover {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+
+  /* Content containers */
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-padding {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .section-spacing {
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+  }
+}
+
+/* Utility layer for additional helpers */
+@layer utilities {
+  /* Aspect ratio utilities */
+  .aspect-golden {
+    aspect-ratio: 1.618 / 1;
+  }
+
+  .aspect-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(245, 158, 11, 0.3) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(245, 158, 11, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(245, 158, 11, 0.5);
+  }
+
+  /* Safe area utilities for mobile */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+@font-face {
+  font-family: 'Cafe24Meongi';
+  src: url('../src/fonts/Cafe24Meongi-W-v1.0.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-meongi {
+  font-family: 'Cafe24Meongi', cursive;
+}
+
+@font-face {
+  font-family: 'Cafe24MeongiBlack';
+  src: url('../src/fonts/Cafe24Meongi-B-v1.0.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-meongiB {
+  font-family: 'Cafe24MeongiBlack', cursive;
+}
+
+@font-face {
+  font-family: 'OngleipParkDahyeon';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+.font-ongle {
+  font-family: 'OngleipParkDahyeon', cursive;
+}
+
+@font-face {
+  font-family: 'JoseonGulim';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff')
+    format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+.font-Joseon {
+  font-family: 'JoseonGulim', cursive;
+}
+
+@font-face {
+  font-family: 'Escoredream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff')
+    format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+.font-ES {
+  font-family: 'Escoredream', cursive;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
